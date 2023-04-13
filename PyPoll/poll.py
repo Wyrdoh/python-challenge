@@ -10,7 +10,7 @@ results = os.path.join("Analysis", "election_analysis.txt")
 
 # assign a variable to count total votes and set it to 0, putting above the main body of code to be called back on later
 # assign a variable to count the number of candidates and set it to an empty list to be filled in when I iterate through the csv
-# declare an empty dictionary to hold the vote count for the candidates. Using a dictionary here so I can save the key value pairs of candidate and votes
+# declare an empty dictionary to hold the vote count for the candidates using key value pairs.
 total_votes = 0
 candidate_options = []
 candidate_votes = {}
@@ -37,11 +37,6 @@ with open(csvfile) as election_data:
         # Start counting each candiates votes and adding 1 to the total every time the name matches a candidate
         candidate_votes[candidate_name] += 1
 with open(results, "w") as txt_file:
-    # print(f"\n")
-    # print("Election Results")
-    # print("==========================")
-    # print(total_votes)
-    # print("==========================")
     election_results = (
         f"\nElection Results\n"
         f"\n==============================\n"
@@ -50,7 +45,6 @@ with open(results, "w") as txt_file:
     print(election_results, end="")
     txt_file.write(election_results)
 # Print the total amount of candidate votes in the candidate votes dictionary
-# print(candidate_votes)
 
     # Determine the percentage of votes for each candidate by looping through the counts
     # Iterate through the cadidate list
